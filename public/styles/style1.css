@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+}
+body main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main .container {
+  background-color: rgba(128, 128, 128, 0.3);
+  width: 480px;
+  height: 580px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main .container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  width: 100%;
+  height: 75%;
+}
+body main .container form h1 {
+  font-size: 2.5rem;
+  margin: 2rem 0;
+}
+body main .container form h1 a {
+  font-size: 2.8rem;
+  color: gray;
+  text-decoration: none;
+  font-family: "Abril Fatface", cursive;
+}
+body main .container form h1 a:hover {
+  color: aqua;
+}
+body main .container form .box {
+  width: 80%;
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+body main .container form .box div {
+  flex: 1 1 200px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+body main .container form .box div input {
+  border-radius: 6px;
+  width: 50%;
+  height: 100%;
+  border: none;
+}
+body main .container form .box div input::-moz-placeholder {
+  text-align: center;
+  font-size: 1.2rem;
+}
+body main .container form .box div input:-ms-input-placeholder {
+  text-align: center;
+  font-size: 1.2rem;
+}
+body main .container form .box div input::placeholder {
+  text-align: center;
+  font-size: 1.2rem;
+}
+body main .container form .box div input:nth-child(odd) {
+  margin-right: 0.75rem;
+}
+body main .container form .box div #email {
+  width: 100%;
+  margin: 0;
+}
+body main .container form p {
+  color: gray;
+  font-size: 0.8rem;
+}
+body main .container form button {
+  margin: 0.5rem 0;
+  padding: 0.25rem 2rem;
+  border-radius: 12px;
+  border: none;
+  background-color: rgba(95, 158, 160, 0.5);
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+body main .container form button:hover {
+  background-color: rgb(95, 158, 160);
+}
+body main .container form .dp {
+  margin: 0.5rem 0;
+  width: 80%;
+  text-align: left;
+}
+body main .container p {
+  margin-bottom: 0.5rem;
+  color: white;
+}
+body main .container p a {
+  text-decoration: none;
+  color: red;
+}
+body main .container .remind {
+  color: red;
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  body main {
+    background-color: rgba(128, 128, 128, 0.3);
+  }
+  body main .container {
+    background: none;
+  }
+  body main .container form h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+  body main .container form .box {
+    width: 100%;
+  }
+  body main .container form .dp {
+    width: 90%;
+  }
+}/*# sourceMappingURL=style1.css.map */

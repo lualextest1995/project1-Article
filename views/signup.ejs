@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Article | 註冊</title>
+    <link rel="shortcut icon" href="/logo.png" />
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .error {
+        text-align: center;
+        padding: 0.5rem 1rem;
+        margin-top: 2rem;
+        background-color: black;
+        color: red;
+        border-radius: 10px;
+      }
+    </style>
+    <link rel="stylesheet" href="/styles/style1.css" />
+  </head>
+  <body>
+    <main>
+      <section class="container">
+        <form action="/auth/signup" method="POST">
+          <h1>建立您的<a href="/">Article</a>帳戶</h1>
+          <div class="box">
+            <label for="lastName">姓名：</label>
+            <div>
+              <input
+                type="text"
+                name="lastname"
+                id="lastName"
+                placeholder="姓氏"
+                required
+                autocomplete="new-name"
+              />
+              <input
+                type="text"
+                id="firstname"
+                placeholder="名字"
+                name="firstname"
+                autocomplete="new-name"
+                required
+              />
+            </div>
+          </div>
+          <div class="box">
+            <label for="email">電子郵件：</label>
+            <div>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="您的電子郵件"
+                autocomplete="new-email"
+                required
+              />
+            </div>
+          </div>
+          <p>你必須確認這個電子郵件地址屬於你本人</p>
+          <div class="box">
+            <label for="password">密碼：</label>
+            <div>
+              <input
+                class="password"
+                type="password"
+                name="password"
+                placeholder="密碼"
+                id="password"
+                minlength="8"
+                required
+              />
+              <input
+                class="password"
+                type="password"
+                placeholder="確認密碼"
+                minlength="8"
+                id="password2"
+                required
+              />
+            </div>
+          </div>
+          <p>請混合使用８個字元以上的英文字母、數字和符號</p>
+          <div class="dp">
+            <input
+              id="display-password"
+              type="checkbox"
+              value=""
+              onclick="dp()"
+            />
+            <label for="display-password">顯示密碼</label>
+          </div>
+          <button class="sign" type="submit">註冊</button>
+        </form>
+        <p>已有帳號嗎？<a href="/auth/login">立即登入</a></p>
+        <p class="remind">確認密碼必須與密碼相同！！</p>
+        <%- include ("message") %>
+      </section>
+    </main>
+  </body>
+  <script src="/signup.js"></script>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Article</title>
+    <link rel="shortcut icon" href="/logo.png" />
+    <!--Google fonts logo-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"
+      rel="stylesheet"
+    />
+    <!--Google fonts chinese-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+  <body>
+    <nav>
+      <p>Article</p>
+      <ul>
+        <% if(!user){ %>
+        <li><a href="/auth/signup">立即註冊</a></li>
+        <li><a href="/auth/login">登入</a></li>
+        <% } %> <% if(user){ %>
+        <li><a href="/profile1">個人頁面</a></li>
+        <li><a href="/auth/logout">登出</a></li>
+        <% } %>
+      </ul>
+    </nav>
+    <main>
+      <section class="page1">
+        <div class="back">
+          <img src="/background-img.jpeg" alt="" />
+        </div>
+        <h1><span>Jot down</span> the notes.</h1>
+        <% if(!user){ %>
+        <a class="sign-up" href="/auth/signup">立即註冊</a>
+        <% } %> <% if(user){ %>
+        <a class="sign-up" href="/profile1">個人頁面</a>
+        <% } %>
+        <div class="pointer-down">
+          <p>瞭解更多</p>
+          <a href="#1"><i class="fa-solid fa-angle-down"></i></a>
+        </div>
+      </section>
+      <section class="page2" id="1">
+        <div class="introduction">
+          <div class="left">
+            <img src="/box1.jpeg" />
+          </div>
+          <div class="right">
+            <h2>將你生活中的大小事記錄在<span>Article</span>中</h2>
+
+            <p>
+              Success is the sum of small efforts, repeated day-in and day-out.
+            </p>
+            <p>成功是每個微小努力的加總，並每天不斷地重覆。</p>
+          </div>
+        </div>
+        <div class="function">
+          <div class="box box2">
+            <div>
+              <div>
+                <h1>在電腦上使用。</h1>
+                <h3>支援Windows 7/10/11、Linux、macOS、chromeOS</h3>
+              </div>
+              <div>
+                <img src="/boxcomputer.jpeg" />
+              </div>
+            </div>
+          </div>
+          <div class="box box1">
+            <div>
+              <div>
+                <img src="/boxcomputer.jpeg" />
+              </div>
+              <div>
+                <h1>在電腦上使用。</h1>
+                <h3>支援Windows 7/10/11、Linux、macOS、chromeOS。</h3>
+              </div>
+            </div>
+          </div>
+          <div class="box">
+            <div>
+              <div>
+                <img src="/boxphone.jpeg" />
+              </div>
+              <div>
+                <h1>在行動裝置上使用。</h1>
+                <h3>支援ios、Android、iPadOS。</h3>
+              </div>
+            </div>
+          </div>
+          <div class="box box2">
+            <div>
+              <div>
+                <h1>隨處都能使用。</h1>
+                <h3>隨您在手機、平板電腦、筆記型電腦中瀏覽器打開即可使用。</h3>
+              </div>
+              <div>
+                <img src="/box.jpeg" />
+              </div>
+            </div>
+          </div>
+          <div class="box box1">
+            <div>
+              <div>
+                <img src="/box.jpeg" />
+              </div>
+              <div>
+                <h1>隨處都能使用。</h1>
+                <h3>隨您在手機、平板電腦、筆記型電腦中瀏覽器打開即可使用。</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="page3">
+        <div class="carousal">
+          <div class="view" onmouseover="stop()" onmouseout="start()">
+            <div class="prev" onclick="run(-1)">
+              <p><i class="fa-solid fa-angle-left"></i></p>
+            </div>
+            <div class="next" onclick="run(1)">
+              <p>
+                <i class="fa-solid fa-angle-right"></i>
+              </p>
+            </div>
+            <div class="indexButton"></div>
+            <ul>
+              <li><img src="/picture5.png" alt="" /></li>
+              <li><img src="/picture1.png" alt="" /></li>
+              <li><img src="/picture2.png" alt="" /></li>
+              <li><img src="/picture3.png" alt="" /></li>
+              <li><img src="/picture4.png" alt="" /></li>
+              <li><img src="/picture5.png" alt="" /></li>
+              <li><img src="/picture1.png" alt="" /></li>
+            </ul>
+          </div>
+        </div>
+        <div class="list">
+          <h1>常見問題解答</h1>
+          <div>
+            <div class="question" onclick="display(1)">
+              <p>Article是什麼?</p>
+              <p><i class="fa-solid fa-plus item-1"></i></p>
+            </div>
+            <div class="answer answer-1 none">
+              <p>
+                Article 是雲端筆記本，透過連結網路的裝置，提供即時記錄的工具。
+              </p>
+            </div>
+          </div>
+          <div>
+            <div class="question" onclick="display(2)">
+              <p>Article是否收費?</p>
+              <p><i class="fa-solid fa-plus item-2"></i></p>
+            </div>
+            <div class="answer answer-2 none">
+              <p>Article只需註冊帳號即可免費使用全功能。</p>
+            </div>
+          </div>
+          <div>
+            <div class="question" onclick="display(3)">
+              <p>Article功能?</p>
+              <p><i class="fa-solid fa-plus item-3"></i></p>
+            </div>
+            <div class="answer answer-3 none">
+              <p>Article目前僅有基本的功能。</p>
+              <p>後續功能正在測試中，敬請期待！</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Article</p>
+      <ul>
+        <li><p>Copyright © 2022 Alex Lu. All rights reserved.</p></li>
+      </ul>
+    </footer>
+  </body>
+  <script src="/app.js"></script>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Article | search</title>
+    <link rel="shortcut icon" href="/logo.png" />
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/styles/stylechat.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="accountbox none">
+        <ul>
+          <li><a href="/auth/logout">登出</a></li>
+        </ul>
+      </div>
+      <div class="hamburger">
+        <p onclick="none1()"><i class="fa-solid fa-bars"></i></p>
+      </div>
+      <section class="hamburgerlist none">
+        <div class="bigbox">
+          <div class="search1">
+            <form action="/profile2/search" method="GET">
+              <input
+                type="search"
+                name="content"
+                placeholder="搜尋#截圖區"
+                autocomplete="off"
+                required
+              />
+              <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+          </div>
+          <div class="left">
+            <ul>
+              <li><a href="/profile1">#紀錄區</a></li>
+              <li><a class="active" href="#">#截圖區</a></li>
+              <li><a href="/profile3">#分享區</a></li>
+              <li><a href="/profile4">#未分類</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <a class="logo" href="/">Article</a>
+      <div class="search">
+        <form action="/profile2/search" method="GET">
+          <input
+            type="search"
+            name="content"
+            placeholder="搜尋#截圖區"
+            autocomplete="off"
+            required
+          />
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </div>
+      <div class="account">
+        <img class="picc" src="<%= user.picture %> " alt="" onclick="none()" />
+        <p class="picc1" onclick="none()"><%= user.firstname %></p>
+      </div>
+    </nav>
+    <main>
+      <section class="left">
+        <ul>
+          <li><a href="/profile1">#紀錄區</a></li>
+          <li><a class="active" href="/profile2">#截圖區</a></li>
+          <li><a href="/profile3">#分享區</a></li>
+          <li><a href="/profile4">#未分類</a></li>
+        </ul>
+      </section>
+      <section class="right">
+        <div class="goTop">
+          <a href="#0"><i class="fa-solid fa-angle-up"></i></a>
+        </div>
+        <div class="content">
+          <div class="introduce" id="0">
+            <% if(datas.length > 0){ %>
+            <h1>搜尋＃截圖區中的 <mark><%= content %></mark></h1>
+            <% }else{ %>
+            <h1>＃截圖區中查無資料</h1>
+            <% } %>
+            <div class="goBottom">
+              <a href="/profile2">跳轉回＃截圖區</a>
+            </div>
+          </div>
+          <% if(datas.length > 0){ %> <% for(let i = 0;i < datas.length;i++){ %>
+          <div class="message">
+            <!--delete-->
+            <form class="delete" action="/profile2/delete" method="POST">
+              <input type="hidden" name="id" value="<%= datas[i]._id %>" />
+              <button><i class="fa-solid fa-trash"></i></button>
+            </form>
+            <!--delete-->
+            <div>
+              <img src="<%= user.picture %> " alt="" />
+            </div>
+            <div>
+              <p>
+                <%= user.firstname %>
+                <span><%= datas[i].date.toLocaleDateString() %> </span>
+              </p>
+              <% let string = datas[i].content %> <% try { new URL(string); %>
+              <div class="picbox">
+                <a target="_blank" href="<%= datas[i].content %>"
+                  ><%= datas[i].content %></a
+                >
+                <img src="<%= datas[i].content %>" alt="" />
+              </div>
+              <% } catch (_) { %>
+              <p><%= datas[i].content %></p>
+              <% } %>
+            </div>
+          </div>
+          <% } %> <% } %>
+        </div>
+        <div class="comment">
+          <form action="">
+            <input type="text" disabled />
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="/app2.js"></script>
+</html>

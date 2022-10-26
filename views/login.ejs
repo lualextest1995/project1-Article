@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Article | Log in</title>
+    <link rel="shortcut icon" href="/logo.png" />
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .error {
+        text-align: center;
+        padding: 0.5rem 1rem;
+        margin-top: 2rem;
+        background-color: black;
+        color: red;
+        border-radius: 10px;
+      }
+    </style>
+    <link rel="stylesheet" href="/styles/style2.css" />
+  </head>
+  <body>
+    <main>
+      <section class="container">
+        <form action="/auth/login" method="POST">
+          <a class="logo" href="/">Article</a>
+          <h1>登入帳戶</h1>
+          <div>
+            <label for="email">電子郵件：</label>
+            <input
+              autocomplete="new-email"
+              type="email"
+              name="username"
+              id="email"
+              placeholder="您的電子郵件"
+              required
+            />
+          </div>
+          <div>
+            <label for="password">密碼：</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="密碼"
+              id="password"
+              minlength="8"
+              required
+            />
+          </div>
+          <button>登入</button>
+        </form>
+        <p>沒有帳號嗎？ <a href="/auth/signup">註冊</a></p>
+        <%- include ("message") %>
+      </section>
+    </main>
+  </body>
+</html>

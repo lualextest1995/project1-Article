@@ -1,0 +1,562 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Serif TC", serif;
+}
+
+body {
+  width: 100%;
+  background-color: #6a6a6a;
+  position: relative;
+}
+body nav {
+  z-index: 10;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #2c2c2c;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+body nav .accountbox {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  width: 130px;
+  background-color: #2c2c2c;
+  text-align: center;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  overflow: hidden;
+}
+body nav .accountbox ul li {
+  list-style: none;
+  padding: 0.5rem 0;
+}
+body nav .accountbox ul li:hover {
+  background-color: #545454;
+}
+body nav .accountbox ul li a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: white;
+}
+body nav .hamburger {
+  display: none;
+}
+body nav .hamburger p {
+  margin: 0 1.5rem;
+}
+body nav .hamburger p i {
+  font-size: 2rem;
+  color: white;
+}
+body nav .hamburgerlist {
+  background-color: #424141;
+  top: 60px;
+  left: 0;
+  position: absolute;
+  border-radius: 15px;
+}
+body nav .hamburgerlist .bigbox {
+  width: 300px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+body nav .hamburgerlist .bigbox .search1 form {
+  display: flex;
+}
+body nav .hamburgerlist .bigbox .search1 form input {
+  width: 100%;
+  height: 40px;
+  outline: none;
+  border-radius: 13px;
+  border: none;
+  padding: 10px;
+}
+body nav .hamburgerlist .bigbox .search1 form input::-moz-placeholder {
+  padding: 10px;
+  text-align: center;
+}
+body nav .hamburgerlist .bigbox .search1 form input:-ms-input-placeholder {
+  padding: 10px;
+  text-align: center;
+}
+body nav .hamburgerlist .bigbox .search1 form input::placeholder {
+  padding: 10px;
+  text-align: center;
+}
+body nav .hamburgerlist .bigbox .search1 form button {
+  background-color: black;
+  border: none;
+  border-radius: 13px;
+  cursor: pointer;
+}
+body nav .hamburgerlist .bigbox .search1 form button:hover {
+  background-color: #808080;
+}
+body nav .hamburgerlist .bigbox .search1 form button i {
+  font-size: 1rem;
+  padding: 0.55rem;
+  color: white;
+}
+body nav .hamburgerlist .bigbox .left ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+body nav .hamburgerlist .bigbox .left ul li {
+  margin: 0.5rem 0;
+  width: 100%;
+  list-style: none;
+  transition: all 0.3s ease;
+  border-radius: 15px;
+}
+body nav .hamburgerlist .bigbox .left ul li:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+body nav .hamburgerlist .bigbox .left ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 2.5rem;
+  width: 100%;
+  display: block;
+}
+body nav .hamburgerlist .bigbox .left ul li .active {
+  color: bisque;
+  text-decoration: underline;
+}
+body nav .logo {
+  margin-left: 1rem;
+  color: white;
+  font-size: 2rem;
+  flex: 1 1 160px;
+  text-decoration: none;
+  font-family: "Abril Fatface", cursive;
+}
+body nav .search form {
+  display: flex;
+}
+body nav .search form input {
+  width: 30vw;
+  height: 40px;
+  outline: none;
+  border-radius: 20px;
+  border: none;
+  padding: 10px;
+}
+body nav .search form input::-moz-placeholder {
+  padding: 10px;
+}
+body nav .search form input:-ms-input-placeholder {
+  padding: 10px;
+}
+body nav .search form input::placeholder {
+  padding: 10px;
+}
+body nav .search form button {
+  background-color: black;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+body nav .search form button:hover {
+  background-color: #808080;
+}
+body nav .search form button i {
+  font-size: 1.5rem;
+  padding: 0.55rem;
+  color: white;
+}
+body nav .account {
+  width: 10%;
+  display: flex;
+  flex: 1 1 150px;
+  align-items: center;
+  justify-content: end;
+}
+body nav .account img {
+  width: 2.5vw;
+  border-radius: 50%;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+body nav .account p {
+  margin-right: 2rem;
+  color: white;
+}
+body main {
+  width: 100%;
+  display: flex;
+}
+body main .left {
+  background-color: #545454;
+  width: 10%;
+}
+body main .left ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+body main .left ul li {
+  width: 100%;
+  list-style: none;
+  transition: all 0.3s ease;
+  border-radius: 15px;
+}
+body main .left ul li:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+body main .left ul li a {
+  margin-left: 2rem;
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  width: 100%;
+  display: block;
+}
+body main .left ul li .active {
+  color: bisque;
+  text-decoration: underline;
+}
+body main .right {
+  color: white;
+  width: 90%;
+  position: relative;
+}
+body main .right .goTop {
+  z-index: 10;
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+body main .right .goTop:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+body main .right .goTop a {
+  text-decoration: none;
+  padding: 40px;
+}
+body main .right .goTop a i {
+  font-size: 3rem;
+  color: white;
+}
+body main .right .content {
+  scroll-behavior: smooth;
+  height: 85vh;
+  width: 100%;
+  overflow-y: scroll;
+}
+body main .right .content .introduce {
+  text-align: center;
+  width: 100%;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main .right .content .introduce mark {
+  border-radius: 15px;
+}
+body main .right .content .introduce .goBottom {
+  width: 150px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+}
+body main .right .content .introduce .goBottom:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+body main .right .content .introduce .goBottom p {
+  font-size: 1rem;
+}
+body main .right .content .introduce .goBottom a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: white;
+}
+body main .right .content .message {
+  display: flex;
+  transition: all 0.3s ease;
+  position: relative;
+}
+body main .right .content .message:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+body main .right .content .message .delete {
+  position: absolute;
+  top: 10px;
+  left: 200px;
+}
+body main .right .content .message .delete button {
+  background-color: red;
+  padding: 0.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+body main .right .content .message .delete button i {
+  font-size: 1rem;
+  color: white;
+  transition: all 0.3s ease;
+}
+body main .right .content .message .delete button i:hover {
+  color: cadetblue;
+}
+body main .right .content .message div {
+  margin: 0.5rem;
+}
+body main .right .content .message div img:first-child {
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+}
+body main .right .content .message div p {
+  color: white;
+}
+body main .right .content .message div p:first-child {
+  color: blue;
+}
+body main .right .content .message div p:first-child span {
+  color: #2c2c2c;
+  font-size: 0.5rem;
+}
+body main .right .content .message div .picbox {
+  display: flex;
+  flex-direction: column;
+}
+body main .right .content .message div .picbox a {
+  color: white;
+  text-decoration: none;
+}
+body main .right .content .message div .picbox a:hover {
+  color: red;
+}
+body main .right .content .message div .picbox img {
+  width: 400px;
+}
+body main .right .comment {
+  z-index: 10;
+  position: static;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #6a6a6a;
+}
+body main .right .comment form {
+  width: 100%;
+  text-align: center;
+}
+body main .right .comment form input {
+  width: 92%;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background-color: #808080;
+  color: white;
+  outline: none;
+}
+body main .right .comment form input::-moz-placeholder {
+  color: #d3d3d3;
+  padding: 20px;
+}
+body main .right .comment form input:-ms-input-placeholder {
+  color: #d3d3d3;
+  padding: 20px;
+}
+body main .right .comment form input::placeholder {
+  color: #d3d3d3;
+  padding: 20px;
+}
+
+@media screen and (max-width: 1500px) {
+  body nav .search form input {
+    width: 50vw;
+  }
+  body nav .account img {
+    width: 50px;
+  }
+  body main .left {
+    width: 15%;
+  }
+  body main .left ul {
+    align-items: center;
+  }
+  body main .left ul li {
+    text-align: center;
+  }
+  body main .left ul li a {
+    margin: 0.5rem 0;
+  }
+  body main .right .content .introduce {
+    font-size: 3rem;
+  }
+  body main .right .content .introduce .goBottom {
+    width: 300px;
+  }
+  body main .right .content .introduce .goBottom a,
+body main .right .content .introduce .goBottom p {
+    font-size: 2rem;
+  }
+  body main .right .content .message .delete {
+    top: 18px;
+    left: 280px;
+  }
+  body main .right .content .message div:last-child {
+    width: 750px;
+    word-wrap: break-word;
+  }
+  body main .right .content .message div img:first-child {
+    width: 6vw;
+    height: 6vw;
+  }
+  body main .right .content .message div p {
+    font-size: 2rem;
+  }
+  body main .right .content .message div p:first-child {
+    font-size: 1.5rem;
+  }
+  body main .right .content .message div p:first-child span {
+    font-size: 1rem;
+  }
+  body main .right .content .message div .picbox a {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 1000px) {
+  body nav .search {
+    display: none;
+  }
+  body nav .hamburger {
+    display: block;
+  }
+  body main .left {
+    display: none;
+  }
+  body main .right {
+    width: 100%;
+  }
+  body main .right .content .message .delete {
+    top: 18px;
+    left: 250px;
+  }
+  body main .right .content .message div:last-child {
+    width: 600px;
+    word-wrap: break-word;
+  }
+}
+@media screen and (max-width: 700px) {
+  body main .right .content .message div:last-child {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 500px) {
+  body nav .hamburger p {
+    margin: 0 0.5rem;
+  }
+  body nav .hamburger p i {
+    font-size: 1.5rem;
+  }
+  body nav .hamburgerlist .bigbox {
+    width: 220px;
+    height: 250px;
+  }
+  body nav .hamburgerlist .bigbox .left ul li a {
+    font-size: 1.5rem;
+  }
+  body nav .logo {
+    flex: 1 1 100px;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+  }
+  body nav .account img {
+    width: 45px;
+    margin-right: 1rem;
+  }
+  body nav .account p {
+    margin-right: 1rem;
+  }
+  body main .right .goTop {
+    width: 60px;
+    height: 60px;
+  }
+  body main .right .goTop a i {
+    font-size: 2rem;
+  }
+  body main .right .content .introduce {
+    font-size: 1.5rem;
+  }
+  body main .right .content .introduce .goBottom {
+    width: 100%;
+  }
+  body main .right .content .introduce .goBottom a,
+body main .right .content .introduce .goBottom p {
+    font-size: 1.2rem;
+  }
+  body main .right .content .message div:last-child {
+    width: 270px;
+  }
+  body main .right .content .message div img:first-child {
+    width: 12vw;
+    height: 12vw;
+  }
+  body main .right .content .message div p {
+    font-size: 1.5rem;
+  }
+  body main .right .content .message div .picbox a {
+    font-size: 1.5rem;
+  }
+  body main .right .content .message div .picbox img {
+    width: 200px;
+  }
+  body main .right .comment {
+    height: 60px;
+  }
+}
+@media screen and (max-height: 940px) {
+  body main .right .content {
+    height: 82vh;
+  }
+}
+@media screen and (max-height: 700px) {
+  body main .right .content {
+    height: 80vh;
+  }
+}
+.none {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #545454;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border-radius: 10px;
+}/*# sourceMappingURL=stylechat.css.map */
